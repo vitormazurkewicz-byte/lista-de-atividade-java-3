@@ -1,1 +1,84 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio10 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int codigo;
+        int quantidade;
+        int totalItens = 0;
+        double preco;
+        double total = 0;
+        double totalFinal;
+
+        while (true) {
+
+            System.out.print("Digite o código do produto (0 encerra): ");
+            codigo = entrada.nextInt();
+
+            if (codigo == 0) {
+                break;
+            }
+
+            System.out.print("Digite o preço unitário: ");
+            preco = entrada.nextDouble();
+
+            System.out.print("Digite a quantidade: ");
+            quantidade = entrada.nextInt();
+
+            total += preco * quantidade;
+            totalItens += quantidade;
+
+        }
+
+        System.out.printf("%nTotal da compra: R$ %.2f%n", total);
+        System.out.println("Quantidade de itens: " + totalItens);
+
+        System.out.println("\nFORMAS DE PAGAMENTO");
+        System.out.println("1 - Dinheiro (5% de desconto)");
+        System.out.println("2 - Débito");
+        System.out.println("3 - Crédito (3% de acréscimo)");
+
+        System.out.print("Escolha a forma de pagamento: ");
+        int pagamento = entrada.nextInt();
+
+        totalFinal = total;
+
+        switch (pagamento) {
+
+            case 1 -> {
+                totalFinal = total - (total * 0.05);
+                System.out.println("Desconto de 5% aplicado.");
+            }
+
+            case 2 -> {
+                System.out.println("Pagamento no débito.");
+            }
+
+            case 3 -> {
+                totalFinal = total + (total * 0.03);
+                System.out.println("Acréscimo de 3% aplicado.");
+            }
+
+            default -> {
+                System.out.println("Forma de pagamento inválida.");
+            }
+
+        }
+
+        if (total > 300.00) {
+            System.out.println("Aviso: compra grande.");
+        }
+
+        if (totalItens > 20) {
+            System.out.println("Aviso: muitos itens.");
+        }
+
+        System.out.printf("Total final: R$ %.2f%n", totalFinal);
+
+    }
+}
