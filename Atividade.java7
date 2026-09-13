@@ -1,1 +1,50 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio07 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int quantidade;
+        int aprovados = 0;
+        int abaixo = 0;
+        double soma = 0;
+        double nota;
+
+        System.out.print("Digite a quantidade de alunos: ");
+        quantidade = entrada.nextInt();
+
+        for (int i = 1; i <= quantidade; i++) {
+
+            System.out.print("Digite a nota do aluno " + i + ": ");
+            nota = entrada.nextDouble();
+
+            soma += nota;
+
+            if (nota >= 6) {
+                aprovados++;
+            } else {
+                abaixo++;
+            }
+
+        }
+
+        if (quantidade > 0) {
+
+            double media = soma / quantidade;
+
+            System.out.printf("Média da turma: %.2f%n", media);
+            System.out.println("Alunos com nota maior ou igual a 6: " + aprovados);
+            System.out.println("Alunos abaixo de 6: " + abaixo);
+
+        } else {
+
+            System.out.println("Nenhum aluno informado.");
+
+        }
+
+    }
+}
