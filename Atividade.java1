@@ -1,0 +1,29 @@
+package br.com.seunome.lista03;
+
+import java.util.Scanner;
+
+public class Exercicio01 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int n;
+        int contador = 1;
+
+        System.out.print("Digite um número inteiro: ");
+        n = entrada.nextInt();
+
+        if (n < 1) {
+            System.out.println("Não há valores a exibir.");
+        } else {
+
+            while (contador <= n) {
+                System.out.println(contador);
+                contador++;
+            }
+
+        }
+
+    }
+}
