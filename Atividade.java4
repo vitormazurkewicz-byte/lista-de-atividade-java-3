@@ -1,1 +1,57 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio04 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int opcao;
+        double numero;
+
+        do {
+
+            System.out.println("\nMENU");
+            System.out.println("1 - Dobro");
+            System.out.println("2 - Metade");
+            System.out.println("3 - Quadrado");
+            System.out.println("0 - Sair");
+
+            System.out.print("Escolha uma opção: ");
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+
+                case 1 -> {
+                    System.out.print("Digite um número: ");
+                    numero = entrada.nextDouble();
+
+                    System.out.println("Dobro: " + (numero * 2));
+                }
+
+                case 2 -> {
+                    System.out.print("Digite um número: ");
+                    numero = entrada.nextDouble();
+
+                    System.out.println("Metade: " + (numero / 2));
+                }
+
+                case 3 -> {
+                    System.out.print("Digite um número: ");
+                    numero = entrada.nextDouble();
+
+                    System.out.println("Quadrado: " + (numero * numero));
+                }
+
+                case 0 -> System.out.println("Saindo...");
+
+                default -> System.out.println("Opção inválida.");
+
+            }
+
+        } while (opcao != 0);
+
+    }
+}
