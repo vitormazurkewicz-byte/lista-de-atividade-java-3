@@ -1,1 +1,40 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio05 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int a;
+        int b;
+        int soma = 0;
+
+        System.out.print("Digite o valor de A: ");
+        a = entrada.nextInt();
+
+        System.out.print("Digite o valor de B: ");
+        b = entrada.nextInt();
+
+        if (a > b) {
+
+            System.out.println("Intervalo inválido.");
+
+        } else {
+
+            for (int i = a; i <= b; i++) {
+
+                if (i % 2 == 0) {
+                    soma += i;
+                }
+
+            }
+
+            System.out.println("Soma dos números pares: " + soma);
+
+        }
+
+    }
+}
