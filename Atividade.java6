@@ -1,1 +1,32 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio06 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int numero;
+        long fatorial = 1;
+
+        System.out.print("Digite um número inteiro não negativo: ");
+        numero = entrada.nextInt();
+
+        if (numero < 0) {
+
+            System.out.println("Entrada inválida.");
+
+        } else {
+
+            for (int i = 1; i <= numero; i++) {
+                fatorial *= i;
+            }
+
+            System.out.println("Fatorial: " + fatorial);
+
+        }
+
+    }
+}
