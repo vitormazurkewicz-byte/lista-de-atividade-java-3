@@ -1,1 +1,25 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio02 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int numero;
+        int contador = 1;
+
+        System.out.print("Digite um número: ");
+        numero = entrada.nextInt();
+
+        while (contador <= 10) {
+
+            System.out.println(numero + " x " + contador + " = " + (numero * contador));
+
+            contador++;
+        }
+
+    }
+}
