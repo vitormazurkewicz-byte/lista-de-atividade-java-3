@@ -1,1 +1,59 @@
+package br.com.seunome.lista03;
 
+import java.util.Scanner;
+
+public class Exercicio08 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        int numero;
+        int quantidade = 0;
+        int soma = 0;
+        int maior = 0;
+        int menor = 0;
+
+        System.out.print("Digite um número inteiro (0 encerra): ");
+        numero = entrada.nextInt();
+
+        while (numero != 0) {
+
+            if (quantidade == 0) {
+                maior = numero;
+                menor = numero;
+            } else {
+
+                if (numero > maior) {
+                    maior = numero;
+                }
+
+                if (numero < menor) {
+                    menor = numero;
+                }
+
+            }
+
+            soma += numero;
+            quantidade++;
+
+            System.out.print("Digite outro número (0 encerra): ");
+            numero = entrada.nextInt();
+
+        }
+
+        if (quantidade == 0) {
+
+            System.out.println("Nenhum valor foi lido.");
+
+        } else {
+
+            System.out.println("Quantidade de valores: " + quantidade);
+            System.out.println("Soma: " + soma);
+            System.out.println("Maior: " + maior);
+            System.out.println("Menor: " + menor);
+
+        }
+
+    }
+}
